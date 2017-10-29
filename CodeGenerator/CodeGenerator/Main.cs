@@ -5,27 +5,24 @@ namespace CodeGenerator
 {
     public partial class Main : Form
     {
-        private FormCSGenerator childForm = new FormCSGenerator();
+        private FormCSGenerator cs = new FormCSGenerator();
+        private FormSQLGenerator sql_insert = new FormSQLGenerator();
+
         public Main()
         {
             InitializeComponent();
         }
 
-        private void ShowNewForm(object sender, EventArgs e)
+        private void CSGenerator_Click(object sender, EventArgs e)
         {
-            childForm.MdiParent = this;
-            childForm.Show();
+            cs.MdiParent = this;
+            cs.Show();
         }
 
-        private void OpenFile(object sender, EventArgs e)
+        private void SQLInsertGenerator_Click(object sender, EventArgs e)
         {
-            OpenFileDialog openFileDialog = new OpenFileDialog();
-            openFileDialog.InitialDirectory = Environment.GetFolderPath(Environment.SpecialFolder.Personal);
-            openFileDialog.Filter = "Text Files (*.txt)|*.txt|All Files (*.*)|*.*";
-            if (openFileDialog.ShowDialog(this) == DialogResult.OK)
-            {
-                string FileName = openFileDialog.FileName;
-            }
+            sql_insert.MdiParent = this;
+            sql_insert.Show();
         }
 
         private void ExitToolsStripMenuItem_Click(object sender, EventArgs e)

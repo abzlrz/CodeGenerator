@@ -31,6 +31,7 @@
             this.tbx_parameters = new System.Windows.Forms.TextBox();
             this.tbx_controls = new System.Windows.Forms.TextBox();
             this.panel2 = new System.Windows.Forms.Panel();
+            this.btn_insertupdate = new System.Windows.Forms.Button();
             this.btn_parameter = new System.Windows.Forms.Button();
             this.panel3 = new System.Windows.Forms.Panel();
             this.label2 = new System.Windows.Forms.Label();
@@ -43,7 +44,6 @@
             this.btn_reset = new System.Windows.Forms.Button();
             this.btn_adapter_cmd = new System.Windows.Forms.Button();
             this.panel7 = new System.Windows.Forms.Panel();
-            this.btn_insertupdate = new System.Windows.Forms.Button();
             this.panel2.SuspendLayout();
             this.panel3.SuspendLayout();
             this.panel4.SuspendLayout();
@@ -88,6 +88,21 @@
             this.panel2.Name = "panel2";
             this.panel2.Size = new System.Drawing.Size(568, 39);
             this.panel2.TabIndex = 6;
+            // 
+            // btn_insertupdate
+            // 
+            this.btn_insertupdate.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(35)))), ((int)(((byte)(35)))), ((int)(((byte)(35)))));
+            this.btn_insertupdate.FlatAppearance.BorderSize = 0;
+            this.btn_insertupdate.FlatStyle = System.Windows.Forms.FlatStyle.System;
+            this.btn_insertupdate.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btn_insertupdate.ForeColor = System.Drawing.Color.White;
+            this.btn_insertupdate.Location = new System.Drawing.Point(307, 3);
+            this.btn_insertupdate.Name = "btn_insertupdate";
+            this.btn_insertupdate.Size = new System.Drawing.Size(157, 28);
+            this.btn_insertupdate.TabIndex = 13;
+            this.btn_insertupdate.Text = "Copy as Complete method";
+            this.btn_insertupdate.UseVisualStyleBackColor = false;
+            this.btn_insertupdate.Click += new System.EventHandler(this.btn_insertupdate_Click);
             // 
             // btn_parameter
             // 
@@ -249,21 +264,6 @@
             this.panel7.Size = new System.Drawing.Size(568, 438);
             this.panel7.TabIndex = 9;
             // 
-            // btn_insertupdate
-            // 
-            this.btn_insertupdate.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(35)))), ((int)(((byte)(35)))), ((int)(((byte)(35)))));
-            this.btn_insertupdate.FlatAppearance.BorderSize = 0;
-            this.btn_insertupdate.FlatStyle = System.Windows.Forms.FlatStyle.System;
-            this.btn_insertupdate.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btn_insertupdate.ForeColor = System.Drawing.Color.White;
-            this.btn_insertupdate.Location = new System.Drawing.Point(307, 3);
-            this.btn_insertupdate.Name = "btn_insertupdate";
-            this.btn_insertupdate.Size = new System.Drawing.Size(157, 28);
-            this.btn_insertupdate.TabIndex = 13;
-            this.btn_insertupdate.Text = "Copy as Complete method";
-            this.btn_insertupdate.UseVisualStyleBackColor = false;
-            this.btn_insertupdate.Click += new System.EventHandler(this.btn_insertupdate_Click);
-            // 
             // FormCSGenerator
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -273,7 +273,6 @@
             this.Controls.Add(this.panel7);
             this.Controls.Add(this.panel2);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
-            this.MaximizeBox = false;
             this.Name = "FormCSGenerator";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "C# SQL Parameter Generator";

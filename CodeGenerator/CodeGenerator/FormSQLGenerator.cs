@@ -18,21 +18,22 @@ namespace CodeGenerator
             InitializeComponent();
         }
 
-        private void btn_sql_insert_Click(object sender, EventArgs e)
+        private void btn_generate_Click(object sender, EventArgs e)
         {
-            string top = "create procedure sp_insert";
-            string mid1 = "as begin";
-            string bottom = "end\ngo";
-
-            var values = Regex.Matches(tbx_parameters.Text, @"[^\s()]+(?=[^()]*\))");
-
             StringBuilder builder = new StringBuilder();
 
-            builder.AppendLine(top);
-            var list = values.Cast<Match>().Select(x => x.Value).ToList();
-            builder.AppendLine(bottom);
+            for (int i = 0; i < tbx_value.Lines.Length; i++)
+            {
+                builder.Append($"INSERT INTO [{tbx_table.Text}] ({tbx_fields.Text}) VALUES");
+                builder.AppendLine($@"({tbx_value.Lines[i]});");
+            }
 
-            tbx_result.Text = builder.ToString();
+            tbx_output.Text = builder.ToString();
+        }
+
+        private void btn_copy_Click(object sender, EventArgs e)
+        {
+            Clipboard.SetText(tbx_output.Text);
         }
     }
 }
